@@ -1,0 +1,9 @@
+<ion-view title="Utilities" id="page6">
+  <ion-content padding="true" class="has-header">
+    <button ng-repeat="util in utilities" ui-sref="{{util.sref}}"
+            class="button {{util.color}}  button-icon icon-right button-large white-text"
+            style="height: 20vh; border-radius: 5%; width: 46%; margin: 2% ;">{{util.name}} <br> <i
+      class="icon {{util.icon}}"></i>
+    </button>
+  </ion-content>
+</ion-view>

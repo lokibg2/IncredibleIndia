@@ -1,0 +1,15 @@
+<ion-view title="Search" id="page4">
+  <ion-content padding="true" class="has-header">
+    <a class="list card" style="display:block;text-decoration:none;" id="search-card21"
+       ng-repeat="category in searchCategories" ng-click="navigate(category.name, category.types)">
+      <div style="margin: 0px; background-color: rgb(232, 235, 239); text-align: center;">
+        <img ng-src="{{category.image}}" alt="" style="height: 30vh; width: 100%;">
+      </div>
+      <div class="item   item-body {{colors[$index % 4]}}" id="search-list-item-container8">
+        <div id="search-markdown12" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#fff;">{{category.name}}</p>
+        </div>
+      </div>
+    </a>
+  </ion-content>
+</ion-view>

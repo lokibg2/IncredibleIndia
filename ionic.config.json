@@ -1,0 +1,14 @@
+{
+  "name": "IncredibleIndia",
+  "app_id": "",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "scss/*.scss",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ]
+}

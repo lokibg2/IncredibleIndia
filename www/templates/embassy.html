@@ -1,0 +1,18 @@
+<ion-view title="Embassy Information" id="page17">
+  <ion-content padding="true" class="has-header">
+
+    <div class="list card" ng-repeat="embassy in embassyList" id="placeInfo-card2251">
+      <ion-item id="placeInfo-list-item412" class="white-text" ng-class="colors[$index % 7]">
+        {{embassy.country}}
+      </ion-item>
+      <div class="item item-body" id="placeInfo-list-item-container331">
+        <div id="placeInfo-markdown431" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            <i class="ion ion-ios-list"></i> : {{embassy.Address}} <br>
+            <i class="ion ion-ios-telephone"></i> : {{embassy.phoneNo}} , {{embassy.alternatePhoneNo}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

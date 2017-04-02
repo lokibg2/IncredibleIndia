@@ -1,0 +1,51 @@
+<ion-view title="Profile" id="page7">
+  <ion-content padding="true" class="has-header">
+    <div class="list card" id="profile-card28" ng-if="!showUpdateProfile" style="margin-top: 20%;">
+
+      <button class="button button-large button-block white-text" ng-click="gLogin()"
+              style="margin:2%;background-color:#C63D2D; width: 96%;">
+        Sign in
+        with G+
+      </button>
+      <button class="button button-large button-block white-text"
+              style="margin:2%; width: 96%;background-color:#3C5A99;"
+              ng-click="fbLogin()">
+        Sign in
+        with Facebook
+      </button>
+    </div>
+    <div class="list card" id="profile-card27" ng-if="showUpdateProfile">
+      <div style="margin: 0px; line-height: 250px; background-color: rgb(232, 235, 239); text-align: center;">
+        <img ng-src="{{user.profileImage}}" class="rounded">
+      </div>
+      <div class="item item-body" id="profile-list-item-container13">
+        <form id="profile-form3" class="list">
+          <label class="item item-input item-floating-label" id="profile-input7">
+            <span class="input-label">Input</span>
+            <input type="text" placeholder="Name">
+          </label>
+          <label class="item item-input item-floating-label" id="profile-input8">
+            <span class="input-label">Input</span>
+            <input type="text" placeholder="Gender">
+          </label>
+          <label class="item item-input item-floating-label" id="profile-input14">
+            <span class="input-label">Input</span>
+            <input type="text" placeholder="Nationality">
+          </label>
+          <label class="item item-input item-floating-label" id="profile-input10">
+            <span class="input-label">Input</span>
+            <input type="text" placeholder="Date of Birth">
+          </label>
+          <label class="item item-input item-floating-label" id="profile-input11">
+            <span class="input-label">Input</span>
+            <input type="text" placeholder="Contact">
+          </label>
+          <button class="button button-large button-block button-calm white-text" ng-click="gLogin()"
+                  style="margin:2%; width: 96%;">
+            Update Profile
+          </button>
+        </form>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

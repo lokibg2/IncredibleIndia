@@ -1,0 +1,30 @@
+<ion-view title="Currency Converter" id="page15">
+
+
+  <ion-content padding="true" class="has-header">
+    <div class="image">
+      <img src="../img/currency.jpg" style="height: 30vh; width: 60vw; margin-left: 20vw;;">
+    </div>
+
+    <form id="currencyConverter-form5" class="list">
+      <div class="list">
+        <label class="item item-select" id="currencyConverter-select1">
+          <span class="input-label">Select</span>
+          <select ng-model="curr.sourceCurrency" ng-options="x for x in currencyList"
+                  ng-change="curr.source=0;curr.inr=0;">
+            <option>Select</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-floating-label">
+          <span class="input-label">{{curr.sourceCurrency}}</span>
+          <input type="text" placeholder="{{curr.sourceCurrency}}" ng-model="curr.source" ng-change="convert(false)">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">INR</span>
+          <input type="text" placeholder="INR" ng-model="curr.inr" ng-change="convert(true)">
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
