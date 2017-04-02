@@ -5,8 +5,10 @@
            ng-repeat="place in places" ng-click="pickPlace(place)">
         <img class="item-avatar" ng-src="{{place.icon}}">
         <!--<i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>-->
-        <div class="footer {{mainCat}}">
-          <h4 class="title white-text" style="padding: 1%">{{place.name}}</h4>
+
+        <div class="footer row {{mainCat}}">
+          <h4 class="title col-80 white-text" style="padding: 1%">{{place.name}}</h4>
+          <button class="button col-20" ng-click="visualize(place.id, place.name)">Visualize</button>
         </div>
       </div>
     </div>

@@ -478,7 +478,7 @@ angular.module('app.controllers', [])
   .controller('pOIDetailCtrl',
     ['$scope', '$rootScope', '$stateParams', '$state', '$http', 'sessionService',
       function ($scope, $stateParams, $rootScope, $state, $http, sessionService) {
-        url = "192.168.1.3:3000/fetchPlaces";
+        url = "192.168.1.3:3000";
         $scope.mainCat = sessionService.get('mainCategory');
         var data = {
           location: [40.7127, -74.0059],
@@ -486,10 +486,20 @@ angular.module('app.controllers', [])
           keyword: $rootScope.fetchTypes
         };
 
+
         var config = {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
           }
+        };
+
+        $scope.visualize = function (placeId, pName) {
+          var data = {
+            pid: placeId,
+            name: pName
+          };
+          //POST REQUEST GOES HERE
+
         };
 
 
