@@ -494,43 +494,73 @@ angular.module('app.controllers', [])
         };
 
         $scope.visualize = function (placeId, pName) {
+          console.log("VIss");
           var data = {
             placeId: placeId,
             name: pName
           };
           //POST REQUEST GOES HERE
           $http({
-            url: '192.168.1.3:3000/grabPhotos',
+            url: 'http://192.168.1.4:3000/grabPhotos',
             method: "POST",
             data: data
           })
-          .then(function(response) {
-            $http({
-              url: '192.168.1.3:3000/imageDownloader',
-              method: "POST",
-              data: {imageUrls:respone.data,userId:data.placeId};
-            })
-            .then(function(response1) {
-              // success
-              $http({
-                url: '192.168.1.3:3000/stichImages',
-                method: "POST",
-                data: {images:respone.data,userId:data.placeId};
-              })
-              .then(function(response2) {
-                // success
-              }, 
-              function(response) { // optional
+            .then(function (response) {
+                console.log(response.data);
+                $http({
+                  url: '192.168.1.4:3000/imageDownloader',
+                  method: "POST",
+                  data: {imageUrls: response.data, userId: data.placeId}
+                }).then(function (response1) {
+                    // success
+                    $http({
+                      url: '192.168.1.4:3000/stichVideo',
+                      method: "POST",
+                      data: {images: response.data, userId: data.placeId}
+                    }).then(function (response2) {
+
+                        $ionicModal.fromTemplateUrl('my-modal2.html', {
+                          scope: $scope,
+                          animation: 'slide-in-up'
+                        }).then(function (modal) {
+                          $scope.modal = modal;
+
+                        });
+                        $scope.openModal = function () {
+                          $scope.modal.show();
+                          $scope.video = {};
+                          $scope.video.url = 'http://192.168.1.4:3000/streamVideo';
+                        };
+                        $scope.closeModal = function () {
+                          $scope.modal.hide();
+                        };
+                        // Cleanup the modal when we're done with it!
+                        $scope.$on('$destroy', function () {
+                          $scope.modal.remove();
+                        });
+                        // Execute action on hide modal
+                        $scope.$on('modal.hidden', function () {
+                          // Execute action
+                        });
+                        // Execute action on remove modal
+                        $scope.$on('modal.removed', function () {
+                          // Execute action
+                        });
+                        // success
+                        // 'http://192.168.1.3:3000/streamVideo'
+                        $scope.openModal();
+                      },
+                      function (response) { // optional
+                        // failed
+                      });
+                  },
+                  function (response) { // optional
+                    // failed
+                  });
+              },
+              function (response) { // optional
                 // failed
               });
-              }, 
-              function(response) { // optional
-                // failed
-              });
-          }, 
-          function(response) { // optional
-            // failed
-          });
         };
 
 

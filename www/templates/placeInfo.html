@@ -1,42 +1,45 @@
 <ion-view title="Place Info" id="page9">
   <ion-content padding="true" class="has-header">
     <div class="list card" id="placeInfo-card224">
-      <ion-item id="placeInfo-list-item39">{{place.name}}</ion-item>
-      <div style="margin: 0px; line-height: 250px; background-color: rgb(232, 235, 239); text-align: center;">
-        <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+      <ion-item id="placeInfo-list-item39" class="white-text Adventure">{{place.name}}</ion-item>
+      <div style="margin: 0px; background-color: rgb(232, 235, 239); text-align: center;">
+        <img ng-src="{{place.icon}}" alt="" style="height: 30vh; width: 100%;">
       </div>
       <div class="item item-body" id="placeInfo-list-item-container32">
         <div class="list card" id="placeInfo-card225">
-          <ion-item id="placeInfo-list-item41">Description</ion-item>
+          <ion-item id="placeInfo-list-item41" class="white-text Divine">Description</ion-item>
           <div class="item item-body" id="placeInfo-list-item-container33">
             <div id="placeInfo-markdown43" class="show-list-numbers-and-dots">
-              <p style="margin-top:0px;color:#000000;">{{place.description}}
+              <p style="margin-top:0px;color:#000000;">{{place.name}}
               </p>
             </div>
           </div>
         </div>
         <div class="list card" id="placeInfo-card226">
-          <ion-item id="placeInfo-list-item43">Address</ion-item>
+          <ion-item id="placeInfo-list-item43" class="white-text Entertainment">Address</ion-item>
           <div class="item item-body" id="placeInfo-list-item-container34">
             <div id="placeInfo-markdown44" class="show-list-numbers-and-dots">
-              <p style="margin-top:0px;color:#000000;">{{place.address}}</strong>
+              <p style="margin-top:0px;color:#000000;">{{place.vicinity}}</strong>
               </p>
             </div>
           </div>
         </div>
         <div class="list card" id="placeInfo-card227">
-          <ion-item id="placeInfo-list-item44">Operating Hours</ion-item>
+          <ion-item id="placeInfo-list-item44" class="white-text tab1">Operating Hours</ion-item>
           <div class="item item-body" id="placeInfo-list-item-container35">
             <div id="placeInfo-markdown45" class="show-list-numbers-and-dots">
-              <p style="margin-top:0px;color:#000000;">{{place.timings}}
+              <p style="margin-top:0px;color:#000000;">{{place.timings || "Open on all weekdays from 09:00 to 20:00" }}
               </p>
             </div>
           </div>
         </div>
-        <button id="placeInfo-button19" class="button button-positive  button-block">Contact</button>
-        <button id="placeInfo-button20" class="button button-positive  button-block">Navigate</button>
+        <div class="row">
+          <button id="placeInfo-button19" class="button Adventure col white-text" style="margin: 1%">Contact</button>
+          <button id="placeInfo-button20" class="button Wildlife col white-text" style="margin: 1%">Navigate
+          </button>
+        </div>
         <div class="list card" id="placeInfo-card228">
-          <ion-item id="placeInfo-list-item45">Ratings</ion-item>
+          <ion-item id="placeInfo-list-item45" class="white-text Wildlife">Ratings</ion-item>
           <div class="item item-body" id="placeInfo-list-item-container36">
             <div id="placeInfo-markdown46" class="show-list-numbers-and-dots">
               <p style="margin-top:0px;color:#000000;">To be rated
@@ -44,25 +47,25 @@
             </div>
           </div>
         </div>
-        <button id="placeInfo-button17" class="button button-positive  button-block">Rate this place</button>
+        <button id="placeInfo-button17" class="button tab1 button-block white-text">Rate this place</button>
         <div class="list card" id="placeInfo-card229">
           <ion-item id="placeInfo-list-item46">Reviews</ion-item>
           <div class="item item-body" id="placeInfo-list-item-container37">
             <ion-list id="placeInfo-list9">
               <ion-item class="item-avatar" id="placeInfo-list-item49">
-                <h2>Item</h2>
+                <h2>None yet</h2>
               </ion-item>
-              <div class="item item-body" id="placeInfo-list-item-container39">
-                <div id="placeInfo-markdown51" class="show-list-numbers-and-dots">
-                  <p style="margin-top:0px;color:#000000;">Some friendly
-                    <strong>markdown</strong>
-                  </p>
-                </div>
-              </div>
+              <!--<div class="item item-body" id="placeInfo-list-item-container39">-->
+              <!--<div id="placeInfo-markdown51" class="show-list-numbers-and-dots">-->
+              <!--<p style="margin-top:0px;color:#000000;">Some friendly-->
+              <!--<strong>markdown</strong>-->
+              <!--</p>-->
+              <!--</div>-->
+              <!--</div>-->
             </ion-list>
           </div>
         </div>
-        <button id="placeInfo-button18" class="button button-positive  button-block">Review this place</button>
+        <button id="placeInfo-button18" class="button Divine button-block white-text">Review this place</button>
       </div>
     </div>
   </ion-content>
