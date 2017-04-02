@@ -18,6 +18,15 @@ angular.module('app.routes', [])
           }
         }
       })
+      .state('tabsController.plan', {
+        url: '/pagePlan',
+        views: {
+          'tab1': {
+            templateUrl: 'templates/plan.html',
+            controller: 'planCtrl'
+          }
+        }
+      })
 
       .state('tabsController.placeOfInterest', {
         url: '/page2',
@@ -206,7 +215,8 @@ angular.module('app.routes', [])
             controller: 'embassyCtrl'
           }
         }
-      });
+      })
+
 
     $urlRouterProvider.otherwise('/page1/page1')
 

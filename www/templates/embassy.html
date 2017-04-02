@@ -1,7 +1,13 @@
 <ion-view title="Embassy Information" id="page17">
   <ion-content padding="true" class="has-header">
-
-    <div class="list card" ng-repeat="embassy in embassyList" id="placeInfo-card2251">
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Search" ng-model="search">
+        </label>
+      </div>
+    </div>
+    <div class="list card" ng-repeat="embassy in embassyList | filter:search" id="placeInfo-card2251">
       <ion-item id="placeInfo-list-item412" class="white-text" ng-class="colors[$index % 7]">
         {{embassy.country}}
       </ion-item>

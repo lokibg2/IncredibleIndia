@@ -1,3 +1,32 @@
-<ion-view title="Tour Operators" id="page10">
-  <ion-content padding="true" class="has-header"></ion-content>
+<ion-view title="Tour Operators" id="page8">
+  <ion-content padding="true" class="has-header">
+    <div class="list card" id="pOIDetail-card25">
+
+      <div class="list">
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper">
+            <input type="text" placeholder="Search" ng-model="search">
+          </label>
+        </div>
+      </div>
+
+      <div style="margin: 0px;  background-color: rgb(232, 235, 239);"
+           ng-repeat="tour in tourOperators | filter: search">
+        <!--<i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>-->
+        <div class="item item-divider icon-left ion-home white-text {{colors[$index % 6]}}">
+          {{tour.Name_of_Agency}}
+        </div>
+        <a href="{{'https://www.google.com/maps?q=' + tour.Address}}"
+           class="item item-text-wrap icon-left ion-android-list">
+          {{tour.Address}}, {{tour.State}}
+        </a>
+        <a href="{{'tel:' + tour.Phone}}" class="item item-text-wrap icon-left ion-android-call">
+          {{tour.Phone}}
+        </a>
+        <a href="{{'mail:' + tour.Email}}" class="item item-text-wrap ion-email">
+          {{tour.Email}}
+        </a>
+      </div>
+    </div>
+  </ion-content>
 </ion-view>

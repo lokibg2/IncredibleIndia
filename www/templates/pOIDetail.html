@@ -1,16 +1,11 @@
 <ion-view title="{{mainCat}}" id="page8">
   <ion-content padding="true" class="has-header">
-    <div class="list card" id="pOIDetail-card25">
-      <div style="margin: 0px;  background-color: rgb(232, 235, 239); text-align: center;"
-           ng-repeat="place in places" ng-click="pickPlace(place)">
-        <img class="item-avatar" ng-src="{{place.icon}}">
-        <!--<i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>-->
-
-        <div class="footer row {{mainCat}}">
-          <h4 class="title col-80 white-text" style="padding: 1%">{{place.name}}</h4>
-          <button class="button col-20" ng-click="visualize(place.id, place.name)">Visualize</button>
-        </div>
-      </div>
+    <div class="list">
+      <a ng-repeat="place in places"
+         class="item item-avatar {{mainCat}}" ng-click="pickPlace(place)">
+        <img ng-src="{{place.icon}}">
+        <h2 class="white-text">{{place.name}}</h2>
+      </a>
     </div>
   </ion-content>
 </ion-view>

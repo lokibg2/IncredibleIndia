@@ -1,3 +1,42 @@
 <ion-view title="Planner" id="page2">
-  <ion-content padding="true" class="has-header"></ion-content>
+  <ion-content padding="true" class="has-header">
+    <div class="card">
+      <form id="formAutoComplete" class="list" style="padding: 2%">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Your Nationality</span>
+          <input type="text" ng-model="userData.nationality" placeholder="Your Nationality"/>
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Destination</span>
+          <input type="text" id="autoC"/>
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">No of tourists</span>
+          <input type="text" ng-model="userData.noOfTourists" placeholder="No of tourists"/>
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Average Age</span>
+          <input type="text" ng-model="userData.avgAge" placeholder="Average Age"/>
+        </label>
+        <label class="item item-input item-floating-label">
+          <ion-list>
+            Pick your Interests
+            <ion-checkbox ng-model="userData.adventure">Adventure</ion-checkbox>
+            <ion-checkbox ng-model="userData.entertainment">Entertainment</ion-checkbox>
+            <ion-checkbox ng-model="userData.cultural">Cultural Tourism</ion-checkbox>
+            <ion-checkbox ng-model="userData.divine">Pilgrimage Tourism</ion-checkbox>
+            <ion-checkbox ng-model="userData.shopping">Shopping</ion-checkbox>
+            <ion-checkbox ng-model="userData.wildlife">Wildlife Tourism</ion-checkbox>
+          </ion-list>
+        </label>
+        <div class="row" style="margin-top: 5%">
+          <button
+            class="button button-large button-icon icon-right ion-android-send  Divine col-33 col-offset-33 white-text"
+            ui-sref="tabsController.plan">
+            Confirm
+          </button>
+        </div>
+      </form>
+    </div>
+  </ion-content>
 </ion-view>

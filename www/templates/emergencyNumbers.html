@@ -1,16 +1,12 @@
 <ion-view title="Emergency Numbers" id="page14">
   <ion-content padding="true" class="has-header">
-    <div class="spacer" style="width: 300px; height: 8px;"></div>
-    <a href="tel:102" id="emergencyNumbers-button9" class="button button-positive  button-block">Ambulance</a>
-    <div class="spacer" style="width: 300px; height: 8px;"></div>
-    <a href="tel:1910" id="emergencyNumbers-button10" class="button button-positive  button-block">Blood Bank</a>
-    <div class="spacer" style="width: 300px; height: 8px;"></div>
-    <a href="tel:1098" id="emergencyNumbers-button11" class="button button-positive  button-block">Child Helpline</a>
-    <div class="spacer" style="width: 300px; height: 8px;"></div>
-    <a href="tel:101" id="emergencyNumbers-button12" class="button button-positive  button-block">Fire</a>
-    <div class="spacer" style="width: 300px; height: 8px;"></div>
-    <a href="tel:100" id="emergencyNumbers-button13" class="button button-positive  button-block">Police</a>
-    <div class="spacer" style="width: 300px; height: 8px;"></div>
-    <a href="tel:1091" id="emergencyNumbers-button14" class="button button-positive  button-block">Women Helpline</a>
-  </ion-content>
+    <div class="list">
+
+      <a ng-repeat="em in emergencies" href="{{'tel:' + em.contact_number}}"
+         class="item item-avatar {{colors[$index % 5]}} " href="#">
+        <img ng-src="{{em.image}}">
+        <h2 class="white-text">{{em.name}}</h2>
+      </a>
+    </div>
+    <ion-content>
 </ion-view>
