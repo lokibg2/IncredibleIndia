@@ -495,11 +495,42 @@ angular.module('app.controllers', [])
 
         $scope.visualize = function (placeId, pName) {
           var data = {
-            pid: placeId,
+            placeId: placeId,
             name: pName
           };
           //POST REQUEST GOES HERE
-
+          $http({
+            url: '192.168.1.3:3000/grabPhotos',
+            method: "POST",
+            data: data
+          })
+          .then(function(response) {
+            $http({
+              url: '192.168.1.3:3000/imageDownloader',
+              method: "POST",
+              data: {imageUrls:respone.data,userId:data.placeId};
+            })
+            .then(function(response1) {
+              // success
+              $http({
+                url: '192.168.1.3:3000/stichImages',
+                method: "POST",
+                data: {images:respone.data,userId:data.placeId};
+              })
+              .then(function(response2) {
+                // success
+              }, 
+              function(response) { // optional
+                // failed
+              });
+              }, 
+              function(response) { // optional
+                // failed
+              });
+          }, 
+          function(response) { // optional
+            // failed
+          });
         };
 
 
